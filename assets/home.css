@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 320px) {
+    .logo {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+    }
+}
+
+.navbar {
+    background-color: #7819ac;
+}
+
+.navbar-nav .nav-link {
+    --bs-nav-link-font-size: 18px;
+    --bs-nav-link-color: rgb(255, 255, 255);
+    font-style: italic;
+}
+
+.navbar-nav .nav-link.active {
+    --bs-navbar-active-color: rgb(255, 255, 255);
+    --bs-nav-link-font-size: 20px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.imgcarrito {
+    width: 30px;
+    height: 30px;
+}
+
+.imgicono {
+    width: 30px;
+    height: 30px;
+}
+
+.footer {
+    background-color: #b2abf2;
+}
+
+.logoFooter {
+    width: 180px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.bienvenida {
+    text-align: center;
+    margin-top: 120px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.containertext{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: large;
+    font-style: italic;
+}
+
+.containercards {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.containercards .swiper {
+    width: 75%;
+    height: 100%;
+}
+
+.containercards .swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+
+.containercards .swiper-slide img {
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 70vh;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.swiper-button-next {
+    --swiper-navigation-size: 35px;
+    --swiper-navigation-color: #ffffff;
+    background-color: #7819ac;
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: 4px 3px 4px rgb(83, 83, 83);
+}
+
+.swiper-button-next:hover {
+    --swiper-navigation-size: 33px;
+    --swiper-navigation-color: #ffffff;
+    background-color: #7819ac;
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: none;
+}
+
+.swiper-button-prev {
+    --swiper-navigation-size: 35px;
+    --swiper-navigation-color: #ffffff;
+    background-color: #7819ac;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: -4px 3px 4px rgb(83, 83, 83);
+}
+
+.swiper-button-prev:hover {
+    --swiper-navigation-size: 33px;
+    --swiper-navigation-color: #ffffff;
+    background-color: #7819ac;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: none;
+}
