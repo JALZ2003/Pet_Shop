@@ -1,5 +1,6 @@
 // Constantes
 const containerCards = document.querySelector('.container-cards');
+let mensaje = document.getElementById("mensaje")
 
 // Funciones
 function createCard(nombre, tipo, precio, imagen) {
@@ -27,10 +28,47 @@ function insertCards(list) {
     }
 }
 
-async function urlFetch(url) {
+async function urlFetch(url, tipo) {
     try {
         let products = await fetch(url).then(response => response.json()).then(data => data.products);
         insertCards(products);
+        document.getElementById("filterSearch").addEventListener('click', () => {
+            if (document.getElementById("OrdenUp").disabled == true) {
+                filterData(tipo, "asc")
+            } else {
+                filterData(tipo, "desc")
+            }
+        });
+        document.getElementById("OrdenUp").addEventListener('click', () => { filterData(tipo, "asc") });
+        document.getElementById("OrdenDown").addEventListener('click', () => { filterData(tipo, "desc") });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function filterData(tipo, orden) {
+    try {
+        let texto = document.getElementById("search").value.toLowerCase().trim();
+        let url = `https://pro-talento.up.railway.app/api/mindy/products?tipo=${tipo}&nombre=${texto}&orden=${orden}`;
+        let response = await fetch(url);
+        response = await response.json();
+        containerCards.innerHTML = '';
+        mensaje.innerHTML = '';
+        if (response.products.length != 0 && orden == "asc") {
+            insertCards(response.products);
+            document.getElementById("OrdenUp").disabled = true;
+            document.getElementById("OrdenDown").disabled = false;
+        } else if (response.products.length != 0 && orden == "desc") {
+            insertCards(response.products);
+            document.getElementById("OrdenDown").disabled = true;
+            document.getElementById("OrdenUp").disabled = false;
+        }
+        else {
+            mensaje.innerHTML = "No se encontró este producto"
+            document.getElementById("OrdenUp").disabled = true;
+            document.getElementById("OrdenDown").disabled = true;
+        }
+
     } catch (error) {
         console.log(error);
     }
