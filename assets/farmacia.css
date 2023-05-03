@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.logo {
+    width: 120px;
+    height: 70px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 320px) {
+    .logo {
+        width: 100px;
+        height: 50px;
+        object-fit: cover;
+    }
+}
+
+.navbar {
+    background-color: #7819ac;
+}
+
+.navbar-nav .nav-link {
+    --bs-nav-link-font-size: 18px;
+    --bs-nav-link-color: rgb(255, 255, 255);
+    font-style: italic;
+}
+
+.navbar-nav .nav-link.active {
+    --bs-navbar-active-color: rgb(255, 255, 255);
+    --bs-nav-link-font-size: 20px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.imgcarrito {
+    width: 30px;
+    height: 30px;
+}
+
+.imgicono {
+    width: 30px;
+    height: 30px;
+}
+
+.footer {
+    background-color: #b2abf2;
+}
+
+.logoFooter {
+    width: 180px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.filtros {
+    margin-top: 105px;
+}
+
+#filterSearch {
+    width: 55px;
+    background-color: #7819ac;
+    color: white;
+}
+
+#filterSearch:hover{
+    background-color: #ac41ee;
+}
+
+#OrdenUp, #OrdenDown{
+    background-color: #7819ac;
+}
+
+#OrdenUp:hover, #OrdenDown:hover{
+    background-color: #ac41ee;
+}
+
+#search {
+    width: 30%;
+    min-width: 210px;
+}
+
+.ordenar {
+    color: white;
+}
