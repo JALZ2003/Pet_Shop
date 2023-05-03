@@ -65,7 +65,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     row-gap: 16px;
-    width: 280px;
+    width: 320px;
     background-color: white;
     padding: 10px;
     border: 2px solid #7819ac;
@@ -85,13 +85,13 @@ body {
     justify-content: space-between;
     gap: 10px;
     background-color: #351B6B;
-    font-size: 14px;
+    font-size: 12px;
     color: #fff;
     letter-spacing: 1px;
     padding: 20px;
     border-radius: inherit;
     animation: fadeIn 0.5s;
-    height: 165px;
+    height: 200px;
 }
 
 .product-card__title {
