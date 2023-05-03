@@ -2,9 +2,53 @@
     display: none;
 }
 
+.filtros {
+    margin-top: 105px;
+}
+
+#filterSearch {
+    width: 55px;
+    background-color: #7819ac;
+    color: white;
+}
+
+#filterSearch:hover{
+    background-color: #ac41ee;
+}
+
+#OrdenUp, #OrdenDown{
+    background-color: #7819ac;
+}
+
+#OrdenUp:hover, #OrdenDown:hover{
+    background-color: #ac41ee;
+}
+
+#search {
+    width: 30%;
+    min-width: 210px;
+}
+
+.ordenar {
+    color: white;
+}
+
+.search {
+    color: white;
+}
+
+.mensaje{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: larger;
+}
+
 .container-cards {
     width: 100%;
-    margin-top: 8%;
+    margin-top: 2%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;

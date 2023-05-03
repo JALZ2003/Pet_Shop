@@ -44,11 +44,6 @@ body {
     height: 30px;
 }
 
-.imgicono {
-    width: 30px;
-    height: 30px;
-}
-
 .footer {
     background-color: #b2abf2;
 }
@@ -59,7 +54,7 @@ body {
     object-fit: cover;
 }
 
-/* estilos de las tarjestas */
+/* estilos de las tarjetas */
 .product-card {
     display: flex;
     flex-direction: column;
