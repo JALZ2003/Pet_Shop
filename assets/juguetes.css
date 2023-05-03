@@ -1,0 +1,32 @@
+.container-cards {
+    width: 100%;
+    margin-top: 8%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 30px;
+}
+
+@media (min-width: 0px) {
+    .container-cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .container-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1400px) {
+    .container-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
