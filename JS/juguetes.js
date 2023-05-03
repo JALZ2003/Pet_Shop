@@ -1,4 +1,4 @@
-urlFetch('https://pro-talento.up.railway.app/api/mindy/products?tipo=Juguete', "Juguete);
+urlFetch('https://pro-talento.up.railway.app/api/mindy/products?tipo=Juguete', "Juguete");
 
 const RANDOM = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 const PARTICLES = document.querySelectorAll('.particle')

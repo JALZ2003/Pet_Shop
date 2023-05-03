@@ -1,9 +1,23 @@
 .inactiva {
-    display: none;
+    display: none !important;
 }
 
 .filtros {
     margin-top: 105px;
+}
+
+.clouse {
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 100%;
+    align-self: start;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.clouse:hover {
+    background: white;
 }
 
 #filterSearch {
@@ -113,17 +127,19 @@
 
     .details {
         width: 100%;
-        height: 75%;
+        height: 90%;
         top: 66px;
         left: 0;
     }
 
     .details img {
-        width: 200px;
+        width: 150px;
     }
 
     .datos {
         height: 45%;
+        margin: 2%;
+        padding: 2%;
     }
 
     .datos h2 {
@@ -135,7 +151,7 @@
     }
 
     .button {
-        margin: 50px !important;
+        margin: 30px !important;
     }
 }
 
