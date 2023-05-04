@@ -1,9 +1,11 @@
 urlFetch('https://pro-talento.up.railway.app/api/mindy/products?tipo=Juguete', "Juguete");
 
+buttonClouse.addEventListener('click', () => { clouse() });
+
 const RANDOM = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 const PARTICLES = document.querySelectorAll('.particle')
 PARTICLES.forEach(P => {
-    P.setAttribute('style', `
+	P.setAttribute('style', `
 		--x: ${RANDOM(20, 80)};
 		--y: ${RANDOM(20, 80)};
 		--duration: ${RANDOM(6, 20)};

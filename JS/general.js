@@ -1,9 +1,11 @@
 // Constantes
 const containerCards = document.querySelector('.container-cards');
-let mensaje = document.getElementById("mensaje")
+const buttonClouse = document.querySelector('.clouse');
+const details = document.querySelector('#details');
+let mensaje = document.getElementById("mensaje");
 
 // Funciones
-function createCard(nombre, tipo, precio, imagen) {
+function createCard(id, nombre, tipo, precio, imagen) {
     return `<figure class="product-card">
                 <img src="${imagen}" alt="..." class="product-card__image">
                 <figcaption class="product-card__caption">
@@ -13,7 +15,7 @@ function createCard(nombre, tipo, precio, imagen) {
                     </header>
                     <footer class="product-card__footer">
                         <span class="product-card__price"> ${precio} </span>
-                        <button class="product-card__button">
+                        <button id="${id}" class="product-card__button" onclick="datosDetails(id)">
                             <i class="product-card__icon ri-add-line"></i>
                         </button>
                     </footer>
@@ -21,10 +23,28 @@ function createCard(nombre, tipo, precio, imagen) {
             </figure>`
 }
 
+async function datosDetails(id) {
+    try {
+        details.classList.add('animacion');
+        let producto = await fetch(`https://pro-talento.up.railway.app/api/mindy/products/${id}`).then(response => response.json()).then(data => data.product);
+        document.getElementById('image').src = producto.imagen;
+        document.getElementById('title').textContent = producto.nombre;
+        document.getElementById('description').textContent = producto.descripcion;
+        document.getElementById('price').textContent = "Precio: " + producto.precio;
+        document.getElementById('stock').textContent = "Stock: " + producto.stock;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function clouse() {
+    details.classList.toggle('animacion');
+}
+
 function insertCards(list) {
     for (let i = 0; i < list.length; i++) {
         const element = list[i];
-        containerCards.innerHTML += createCard(element.nombre, element.tipo, element.precio, element.imagen);
+        containerCards.innerHTML += createCard(element._id, element.nombre, element.tipo, element.precio, element.imagen);
     }
 }
 
