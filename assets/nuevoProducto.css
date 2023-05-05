@@ -1,0 +1,45 @@
+.containerForm {
+    margin-top: 120px;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #b2abf2;
+    padding: 15px 15px 15px 15px;
+    background: linear-gradient(180deg, #7819ac 0%, #9589ff 25%, #b2abf2 100%)
+}
+
+@media screen and (max-width: 992px) {
+    .containerForm {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .containerForm {
+        width: 80%;
+    }
+}
+
+::placeholder {
+    font-size: smaller;
+    font-style: italic;
+}
+
+.crear {
+    width: 70px;
+    background-color: #7819ac;
+    color: white;
+    box-shadow: 0px 0px 10px 1px rgb(255, 255, 255);
+}
+
+.crear:hover {
+    background-color: #ac41ee;
+    color: white;
+    box-shadow: none
+}
+
+h3 {
+    font-style: italic;
+    color: white;
+    font-weight: bolder;
+}
