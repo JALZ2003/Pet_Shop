@@ -8,47 +8,50 @@ function nuevoProducto() {
     } else if (document.getElementById('Juguete').checked) {
         tipoProducto = document.getElementById('Juguete').value
     }
-    let precioProducto = document.getElementById("precioProducto").value
-    let stockProducto = document.getElementById("stockProducto").value
+    let precioProducto = parseInt(document.getElementById("precioProducto").value);
+    let stockProducto = parseInt(document.getElementById("stockProducto").value);
 
     if (nombreProducto != 0 && imagenProducto != 0 && descripcionProducto != 0 && tipoProducto != 0 && precioProducto != 0 && stockProducto != 0 && nombreProducto != 0) {
-    let producto = {
-        nombre: nombreProducto,
-        imagen: imagenProducto,
-        descripcion: descripcionProducto,
-        tipo: tipoProducto,
-        precio: precioProducto,
-        stock: stockProducto
+        let producto = {
+            "nombre": nombreProducto,
+            "imagen": imagenProducto,
+            "descripcion": descripcionProducto,
+            "tipo": tipoProducto,
+            "precio": precioProducto,
+            "stock": stockProducto
+        }
+
+        fetch("https://pro-talento.up.railway.app/api/mindy/products", {
+            mode: 'cors',
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(producto)
+        }).then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Error en la solicitud POST');
+        }).then(producto => {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: '¡¡El producto se creo exitosamente!!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }).catch(error => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `${error}`
+            })
+        })
+        document.getElementById("nombreProducto").value = "";
+        document.getElementById("imagenProducto").value = "";
+        document.getElementById("descripcionProducto").value = "";
+        document.getElementById("precioProducto").value = 0;
+        document.getElementById("stockProducto").value = 0;
     }
-
-        fetch("https://pro-talento.up.railway.app/api/mindy/products", { mode: "cors",headers: {"Content-Type": "application/json"}, method: 'POST', body: JSON.stringify(producto) })
-            .then(res => 'alerta para el éxito')
-            .catch(err => 'alerta para el catch')
-    }
-
-
-
-    // const url = "https://pro-talento.up.railway.app/api/mindy/products";
-
-    // const options = {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(producto)
-    // };
-
-    // fetch(url, options)
-    //     .then(response => {
-    //         if (response.ok) {
-    //             console.log("El objeto se ha creado correctamente");
-    //         } else {
-    //             console.error("Error al crear el objeto:", response.statusText);
-    //         }
-    //     })
-    //     .catch(error => console.error("Error en la solicitud:", error));
-
-
 }
 
 
