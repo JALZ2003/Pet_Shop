@@ -50,10 +50,7 @@
 
 .ordenar {
     color: white;
-}
-
-.search {
-    color: white;
+    font-size: 20px;
 }
 
 .mensaje {
@@ -132,13 +129,14 @@
 
     #details.animacion {
         width: 100% !important;
-        height: 90% !important;
-        top: 66px !important;
+        height: 85vh !important;
+        top: 86px !important;
         transition: width 1s, height 1s, top 1s;
     }
 
     #details img {
-        width: 200px;
+        width: 70%;
+        height: 180px;
     }
 
     .datos {
@@ -148,15 +146,16 @@
     }
 
     .datos h2 {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .datos p {
-        font-size: 18px;
+        font-size: 12px;
     }
 
     .button {
-        margin: 30px !important;
+        margin-top: 5px !important;
+        margin-bottom: 20px !important;
     }
 }
 
@@ -165,15 +164,72 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    #details {
-        top: 86px;
+    #details.animacion {
+        width: 60% !important;
+        height: 85vh !important;
+        top: 86px !important;
+        transition: width 1s, height 1s, right 1s;
+    }
+
+    #details img {
+        width: 60%;
+        height: 170px;
+    }
+
+    .datos {
+        height: 75%;
+        margin: 2%;
+        padding: 2%;
+    }
+
+    .datos h2 {
+        font-size: 20px;
+    }
+
+    .datos p {
+        font-size: 12px;
+    }
+
+    .button {
+        margin-top: 5px !important;
+        margin-bottom: 15px !important;
+    }
+}
+
+@media (min-width: 920px) {
+    .container-cards {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     #details.animacion {
         width: 50% !important;
-        height: 80% !important;
+        height: 85vh !important;
         top: 86px !important;
         transition: width 1s, height 1s, right 1s;
+    }
+
+    #details img {
+        width: 60%;
+        height: 170px;
+    }
+
+    .datos {
+        height: 75%;
+        margin: 2%;
+        padding: 2%;
+    }
+
+    .datos h2 {
+        font-size: 20px;
+    }
+
+    .datos p {
+        font-size: 12px;
+    }
+
+    .button {
+        margin-top: 5px !important;
+        margin-bottom: 15px !important;
     }
 }
 
@@ -182,14 +238,35 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
-    #details {
-        top: 86px;
+    #details.animacion {
+        width: 40% !important;
+        height: 85vh !important;
+        top: 86px !important;
+        transition: width 1s, height 1s, right 1s;
     }
 
-    #details.animacion {
-        width: 30% !important;
-        height: 90% !important;
-        transition: width 1s, height 1s, right 1s;
+    #details img {
+        width: 60%;
+        height: 170px;
+    }
+
+    .datos {
+        height: 75%;
+        margin: 2%;
+        padding: 2%;
+    }
+
+    .datos h2 {
+        font-size: 20px;
+    }
+
+    .datos p {
+        font-size: 12px;
+    }
+
+    .button {
+        margin-top: 5px !important;
+        margin-bottom: 20px !important;
     }
 }
 
@@ -198,27 +275,33 @@
         grid-template-columns: repeat(4, 1fr);
     }
 
-    #details {
-        top: 86px;
-    }
-
     #details.animacion {
-        width: 30% !important;
-        height: 90% !important;
+        width: 40% !important;
+        height: 85vh !important;
         top: 86px !important;
         transition: width 1s, height 1s, right 1s;
     }
 
     #details img {
-        width: 300px;
+        width: 65%;
+        height: 210px;
+    }
+
+    .datos {
+        height: 75%;
     }
 
     .datos h2 {
-        font-size: 40px;
+        font-size: 18px;
     }
 
     .datos p {
-        font-size: 20px;
+        font-size: 13px;
+    }
+
+    .button {
+        margin-top: 5px !important;
+        margin-bottom: 20px !important;
     }
 }
 
@@ -241,7 +324,7 @@
     /* background: var(--bg); */
     background: #7819ac;
     margin-top: 100px;
-    font-size: 20px;
+    font-size: 80%;
     font-weight: 500;
     border: 0;
     cursor: pointer;
