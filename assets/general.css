@@ -155,3 +155,30 @@ body {
         transform: translateY(0);
     }
 }
+
+.addcarrito{
+    display: flex;
+    justify-content: center;
+}
+
+.contador{
+    width: 100px;
+}
+
+#unomas{
+    background-color: white;
+    border: none;
+}
+
+#unomenos{
+    background-color: white;
+    border: none;
+}
+
+.iconomas{
+    font-size: 22px;
+}
+
+.iconomas:hover{
+    color: #7819ac;
+}
