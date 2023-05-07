@@ -16,7 +16,7 @@ function createCards(id, imagen, nombre, tipo, precio, cantidad) {
                     </p>
                 </div>
                 <div class="col-lg-2 col-md-4 col-4 colinfo">
-                    <p> Cantidad: ${cantidad} </p>
+                    <p> Cantidad: ${cantidad} <button id="${id}" class="botoneliminar" onclick="discountCant(id)"><i class="bi bi-dash-circle-fill quitarunidad"></i></button></p>
                 </div>
                 <div class="col-lg-2 col-md-4 col-4 colinfo">
                     <p> Subtotal: ${(cantidad * precio).toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })} </p>
@@ -56,13 +56,20 @@ async function insertCardsCar(list, url) {
     }
 }
 
-function deleteProduct(id) {
+function discountCant(id) {
     let product = productosAñaditos.find(prod => prod.id === id);
     let position = productosAñaditos.findIndex(prod => prod.id === id);
     product.amount--;
     if (product.amount === 0) {
         productosAñaditos.splice(position, 1);
     }
+    insertCardsCar(productosAñaditos, 'https://pro-talento.up.railway.app/api/mindy/products');
+    localStorage.setItem('productosAñaditos', JSON.stringify(productosAñaditos));
+}
+
+function deleteProduct(id) {
+    let position = productosAñaditos.findIndex(prod => prod.id === id);
+    productosAñaditos.splice(position, 1);
     insertCardsCar(productosAñaditos, 'https://pro-talento.up.railway.app/api/mindy/products');
     localStorage.setItem('productosAñaditos', JSON.stringify(productosAñaditos));
 }
