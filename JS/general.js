@@ -3,6 +3,7 @@ const containerCards = document.querySelector('.container-cards');
 const buttonClouse = document.querySelector('.clouse');
 const details = document.querySelector('#details');
 let mensaje = document.getElementById("mensaje");
+let productosAñaditos = [];
 
 // Funciones
 function createCard(id, nombre, tipo, precio, imagen) {
@@ -32,6 +33,9 @@ async function datosDetails(id) {
         document.getElementById('description').textContent = producto.descripcion;
         document.getElementById('price').textContent = "Precio: " + producto.precio;
         document.getElementById('stock').textContent = "Stock: " + producto.stock;
+        document.querySelector('.button').addEventListener('click', () => {
+            productosAñaditos.push(id);
+        })
     } catch (error) {
         console.log(error);
     }
@@ -93,3 +97,4 @@ async function filterData(tipo, orden) {
         console.log(error);
     }
 }
+

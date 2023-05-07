@@ -114,11 +114,22 @@
     margin-top: 5%;
 }
 
-.datos div {
+.datos .contenido {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 60%;
+}
+
+.cantidad {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+}
+
+.cantidad div {
+    cursor: pointer;
 }
 
 .datos:nth-child(2) {
@@ -238,8 +249,8 @@
             hsl(260 calc(var(--active) * 97%) 70% / var(--active)),
             transparent),
         hsl(260 calc(var(--active) * 97%) calc((var(--active) * 44%) + 12%));
-     background: var(--bg);
-     background: #7819ac;
+    background: var(--bg);
+    background: #7819ac;
     margin-top: 100px;
     font-size: 20px;
     font-weight: 500;
@@ -462,4 +473,4 @@ svg {
 .button svg {
     inline-size: 1.25em;
     translate: -25% -5%;
-} 
+}
