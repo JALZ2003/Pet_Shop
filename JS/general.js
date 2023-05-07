@@ -52,7 +52,7 @@ async function datosDetails(id) {
 
 function incrementDecrement(id, contador, producto) {
     if (producto.stock == 0) {
-        document.querySelector(".no-stock").textContent = "No hay mas productos";
+        document.querySelector(".no-stock").style = "color: red";
         document.getElementById("unomas").disabled = true;
         document.getElementById("unomenos").disabled = true;
         document.querySelector(".no-stock").style.visibility = "";
@@ -61,6 +61,7 @@ function incrementDecrement(id, contador, producto) {
     }
     if (producto.stock > 0 && producto.stock <= 5) {
         document.querySelector(".no-stock").textContent = "Quedan pocos productos";
+        document.querySelector(".no-stock").style = "color: orange";
         document.querySelector(".no-stock").style.visibility = "";
     }
     document.getElementById("unomenos").addEventListener("click", () => {
@@ -88,8 +89,10 @@ function incrementDecrement(id, contador, producto) {
         document.querySelector(".stock").textContent = "Stock: " + (producto.stock - contador);
     });
     document.querySelector(".button").addEventListener("click", () => {
+        if (producto.stock == 0) {
+            return;
+        }
         if (contador != 0) {
-            document.querySelector(".no-stock").textContent = "No hay mas productos";
             document.querySelector(".no-stock").style.visibility = "hidden";
             if ([...new Set(productosAñaditos.map(prodc => prodc.id))].includes(id)) {
                 productosAñaditos.find(prodc => prodc.id === id).amount += contador;
@@ -105,6 +108,7 @@ function incrementDecrement(id, contador, producto) {
                 timer: 1500
             })
         } else {
+            document.querySelector(".no-stock").style = "color: black;";
             document.querySelector(".no-stock").textContent = "¿Cuantos productos desea llevar?";
             document.querySelector(".no-stock").style.visibility = "";
         }

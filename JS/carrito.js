@@ -66,3 +66,12 @@ function deleteProduct(id) {
     insertCardsCar(productosAñaditos, 'https://pro-talento.up.railway.app/api/mindy/products');
     localStorage.setItem('productosAñaditos', JSON.stringify(productosAñaditos));
 }
+
+function pagar() {
+    for (let i = 0; i < productosAñaditos.length; i++) {
+        productosAñaditos.splice(i, 1);
+        i--;
+    }
+    insertCardsCar(productosAñaditos, 'https://pro-talento.up.railway.app/api/mindy/products');
+    localStorage.setItem('productosAñaditos', JSON.stringify(productosAñaditos));
+}
