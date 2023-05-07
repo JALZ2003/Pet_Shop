@@ -98,9 +98,9 @@ function incrementDecrement(id, contador, producto) {
                 productosAñaditos.push(productAdd);
             }
             Swal.fire({
-                position: 'top-center',
+                position: 'center',
                 icon: 'success',
-                title: 'Your work has been saved',
+                title: 'Sus productos se añadieron correctamente',
                 showConfirmButton: false,
                 timer: 1500
             })

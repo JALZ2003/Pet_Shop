@@ -30,15 +30,27 @@ function createCards(id, imagen, nombre, tipo, precio, cantidad) {
 async function insertCardsCar(list, url) {
     try {
         contendorCarrito.innerHTML = '';
-        let products = await fetch(url).then(response => response.json()).then(data => data.products);
-        let totalAcumulado = 0;
-        for (let i = 0; i < list.length; i++) {
-            const element = list[i];
-            let product = products.find(product => product._id === element.id);
-            contendorCarrito.innerHTML += createCards(element.id, product.imagen, product.nombre, product.tipo, product.precio, element.amount);
-            totalAcumulado += element.amount * product.precio;
+        if (list.length != 0) {
+            let products = await fetch(url).then(response => response.json()).then(data => data.products);
+            let totalAcumulado = 0;
+            for (let i = 0; i < list.length; i++) {
+                const element = list[i];
+                let product = products.find(product => product._id === element.id);
+                contendorCarrito.innerHTML += createCards(element.id, product.imagen, product.nombre, product.tipo, product.precio, element.amount);
+                totalAcumulado += element.amount * product.precio;
+            }
+            document.querySelector('.contendor-total').style.visibility = '';
+            total.textContent = totalAcumulado.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 });
+        } else {
+            document.querySelector('.contendor-total').style.visibility = 'hidden';
+            let message = document.createElement('div');
+            let title = document.createElement('h1');
+            title.textContent = "No hay productos para mostrar"
+            message.appendChild(title);
+            message.style = `height: 50vh`;
+            message.className = `d-flex justify-content-center align-items-center`;
+            contendorCarrito.appendChild(message);
         }
-        total.textContent = totalAcumulado.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 });
     } catch (error) {
         console.log(error);
     }
