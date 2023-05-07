@@ -41,16 +41,22 @@
         </div>
     </nav>
 
-    <div class="carrito mb-4">
+    <div class="carrito">
 
     </div>
     <div class="contendor-total d-flex flex-column">
-        <div class="d-flex justify-content-around">
-            <p>Total: </p>
-            <p class="total">numero</p>
+        <div class="row text-center rounded mb-4 totalPagar">
+            <div class="col-lg-3 col-md-6 col-12"></div>
+            <div class="col-lg-4 col-md-6 col-12"></div>
+            <div class="col-lg-2 col-md-4 col-4"></div>
+            <div class="col-lg-2 col-md-4 col-4">
+                <h5 class="total mt-2"></h5>
+            </div>
+            <div class="col-lg-1 col-md-4 col-4"></div>
         </div>
+
         <div class="d-flex justify-content-center">
-            <button onclick="pagar()" type="button" class="btn btn-outline-success"> Pagar </button>
+            <button onclick="pagar()" type="button" class="btn botonPagar mb-5"> Pagar </button>
         </div>
     </div>
 
@@ -99,6 +105,9 @@
 
     <!-- JS -->
     <script src="../JS/carrito.js"></script>
+
+    <!-- sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

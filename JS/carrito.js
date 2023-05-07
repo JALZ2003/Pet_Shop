@@ -22,7 +22,7 @@ function createCards(id, imagen, nombre, tipo, precio, cantidad) {
                     <p> Subtotal: ${(cantidad * precio).toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })} </p>
                 </div>
                 <div class="col-lg-1 col-md-4 col-4 colinfo">
-                    <button id="${id}" class="botoneliminar" onclick="deleteProductAll(id)"><i class="bi bi-trash3"></i></button>
+                    <button id="${id}" class="botoneliminar" onclick="deleteProduct(id)"><i class="bi bi-trash3"></i></button>
                 </div>
             </div>`;
 }
@@ -40,7 +40,7 @@ async function insertCardsCar(list, url) {
                 totalAcumulado += element.amount * product.precio;
             }
             document.querySelector('.contendor-total').style.visibility = '';
-            total.textContent = totalAcumulado.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 });
+            total.textContent = 'Total: '+totalAcumulado.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 });
         } else {
             document.querySelector('.contendor-total').style.visibility = 'hidden';
             let message = document.createElement('div');
@@ -81,4 +81,12 @@ function pagar() {
     }
     insertCardsCar(productosAñaditos, 'https://pro-talento.up.railway.app/api/mindy/products');
     localStorage.setItem('productosAñaditos', JSON.stringify(productosAñaditos));
+
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Gracias por su compra',
+        showConfirmButton: false,
+        timer: 1500
+    })
 }
