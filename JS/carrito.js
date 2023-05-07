@@ -15,14 +15,15 @@ function createCards(id, imagen, nombre, tipo, precio, cantidad) {
                         <br>Precio: ${precio.toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })}
                     </p>
                 </div>
-                <div class="col-lg-2 col-md-4 col-4 colinfo">
-                    <p> Cantidad: ${cantidad} </p>
+                <div class="col-lg-2 col-md-4 col-4 colinfo ">
+                    <p> Cantidad: ${cantidad} <button id="${id}" class="botoneliminar" onclick="deleteProduct(id)"><i class="bi bi-dash-circle-fill quitarunidad"></i></i></button> </p>
+                    
                 </div>
                 <div class="col-lg-2 col-md-4 col-4 colinfo">
                     <p> Subtotal: ${(cantidad * precio).toLocaleString('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 })} </p>
                 </div>
                 <div class="col-lg-1 col-md-4 col-4 colinfo">
-                    <button id="${id}" class="botoneliminar" onclick="deleteProduct(id)"><i class="bi bi-trash3"></i></button>
+                    <button id="${id}" class="botoneliminar" onclick="deleteProductAll(id)"><i class="bi bi-trash3"></i></button>
                 </div>
             </div>`;
 }
@@ -51,6 +52,13 @@ function deleteProduct(id) {
     if (product.amount === 0) {
         productosAñaditos.splice(position, 1);
     }
+    insertCardsCar(productosAñaditos, 'https://pro-talento.up.railway.app/api/mindy/products');
+    localStorage.setItem('productosAñaditos', JSON.stringify(productosAñaditos));
+}
+
+function deleteProductAll(id) {
+    let position = productosAñaditos.findIndex(prod => prod.id === id);
+    productosAñaditos.splice(position, 1);
     insertCardsCar(productosAñaditos, 'https://pro-talento.up.railway.app/api/mindy/products');
     localStorage.setItem('productosAñaditos', JSON.stringify(productosAñaditos));
 }
