@@ -1,26 +1,5 @@
-#details.animacion {
-    width: 30% !important;
-    height: 90% !important;
-    right: 0% !important;
-    transition: width 1s, height 1s, right 1s !important;
-}
-
 .filtros {
     margin-top: 105px;
-}
-
-.clouse {
-    margin: 10px;
-    width: 30px;
-    height: 30px;
-    border: 2px solid black;
-    border-radius: 100%;
-    align-self: start;
-    background: rgba(255, 255, 255, 0.5);
-}
-
-.clouse:hover {
-    background: rgba(0, 0, 0, 0.5);
 }
 
 #filterSearch {
@@ -71,86 +50,9 @@
     gap: 30px;
 }
 
-#details {
-    width: 0px;
-    position: fixed;
-    border: 2PX solid white;
-    border-radius: 8px;
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
-    height: 90%;
-    top: 66px;
-    right: -2%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    --active: 0;
-    background: rgba(0, 0, 0, 0.8);
-    font-family: system-ui, sans-serif;
-    transition: width 1s, height 1s, right 1s, background var(--transition);
-    overflow: hidden;
-}
-
-.datos>img {
-    width: 300px;
-    box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.5);
-}
-
-.datos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    height: 75%;
-    border-radius: 10px;
-    color: white;
-    overflow: hidden;
-}
-
-.datos h2 {
-    text-align: center;
-    margin-top: 5%;
-}
-
-.datos div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 60%;
-}
-
-.datos:nth-child(2) {
-    text-align: justify;
-}
-
 @media (min-width: 0px) {
     .container-cards {
         grid-template-columns: repeat(1, 1fr);
-    }
-
-    #details.animacion {
-        width: 100% !important;
-        height: 85vh !important;
-        top: 86px !important;
-        transition: width 1s, height 1s, top 1s;
-    }
-
-    #details img {
-        width: 70%;
-        height: 180px;
-    }
-
-    .datos {
-        height: 75%;
-        margin: 2%;
-        padding: 2%;
-    }
-
-    .datos h2 {
-        font-size: 20px;
-    }
-
-    .datos p {
-        font-size: 12px;
     }
 
     .button {
@@ -164,32 +66,6 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    #details.animacion {
-        width: 60% !important;
-        height: 85vh !important;
-        top: 86px !important;
-        transition: width 1s, height 1s, right 1s;
-    }
-
-    #details img {
-        width: 60%;
-        height: 170px;
-    }
-
-    .datos {
-        height: 75%;
-        margin: 2%;
-        padding: 2%;
-    }
-
-    .datos h2 {
-        font-size: 20px;
-    }
-
-    .datos p {
-        font-size: 12px;
-    }
-
     .button {
         margin-top: 5px !important;
         margin-bottom: 15px !important;
@@ -199,32 +75,6 @@
 @media (min-width: 920px) {
     .container-cards {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    #details.animacion {
-        width: 50% !important;
-        height: 85vh !important;
-        top: 86px !important;
-        transition: width 1s, height 1s, right 1s;
-    }
-
-    #details img {
-        width: 60%;
-        height: 170px;
-    }
-
-    .datos {
-        height: 75%;
-        margin: 2%;
-        padding: 2%;
-    }
-
-    .datos h2 {
-        font-size: 20px;
-    }
-
-    .datos p {
-        font-size: 12px;
     }
 
     .button {
@@ -238,32 +88,6 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
-    #details.animacion {
-        width: 40% !important;
-        height: 85vh !important;
-        top: 86px !important;
-        transition: width 1s, height 1s, right 1s;
-    }
-
-    #details img {
-        width: 60%;
-        height: 170px;
-    }
-
-    .datos {
-        height: 75%;
-        margin: 2%;
-        padding: 2%;
-    }
-
-    .datos h2 {
-        font-size: 20px;
-    }
-
-    .datos p {
-        font-size: 12px;
-    }
-
     .button {
         margin-top: 5px !important;
         margin-bottom: 20px !important;
@@ -273,30 +97,6 @@
 @media (min-width: 1400px) {
     .container-cards {
         grid-template-columns: repeat(4, 1fr);
-    }
-
-    #details.animacion {
-        width: 40% !important;
-        height: 85vh !important;
-        top: 86px !important;
-        transition: width 1s, height 1s, right 1s;
-    }
-
-    #details img {
-        width: 65%;
-        height: 210px;
-    }
-
-    .datos {
-        height: 75%;
-    }
-
-    .datos h2 {
-        font-size: 18px;
-    }
-
-    .datos p {
-        font-size: 13px;
     }
 
     .button {
@@ -321,7 +121,6 @@
             hsl(260 calc(var(--active) * 97%) 70% / var(--active)),
             transparent),
         hsl(260 calc(var(--active) * 97%) calc((var(--active) * 44%) + 12%));
-    /* background: var(--bg); */
     background: #7819ac;
     margin-top: 100px;
     font-size: 75%;
