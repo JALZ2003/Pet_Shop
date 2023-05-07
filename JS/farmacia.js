@@ -1,3 +1,3 @@
-let url = "https://pro-talento.up.railway.app/api/mindy/products?tipo=Medicamento"
+urlFetch("https://pro-talento.up.railway.app/api/mindy/products?tipo=Medicamento", "Medicamento");
 
-urlFetch(url, "Medicamento");
+guardarProductos.addEventListener('click', guardarProd);
