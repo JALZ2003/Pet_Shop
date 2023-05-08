@@ -110,6 +110,7 @@ function incrementDecrement(id, contador, producto) {
         } else {
             document.querySelector(".no-stock").style = "color: black;";
             document.querySelector(".no-stock").textContent = "¿Cuantos productos desea llevar?";
+            document.querySelector(".no-stock").style = "color: black";
             document.querySelector(".no-stock").style.visibility = "";
         }
     });

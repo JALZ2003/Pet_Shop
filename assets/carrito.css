@@ -48,3 +48,25 @@
 .quitarunidad:hover {
     color: #7819ac;
 }
+
+.botonPagar {
+    width: 65px;
+    background-color: #7819ac;
+    color: white;
+}
+
+.botonPagar:hover {
+    background-color: #ac41ee;
+}
+
+.contendor-total {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    /* align-items: center; */
+}
+
+.totalPagar{
+    background-color: #7819ac;
+    color: white;
+}
