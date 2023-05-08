@@ -31,7 +31,7 @@ function nuevoProducto() {
                 return response.json();
             }
             throw new Error('Error en la solicitud POST');
-        }).then(producto => {
+        }).then(() => {
             Swal.fire({
                 position: 'center',
                 icon: 'success',

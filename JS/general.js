@@ -1,7 +1,5 @@
 // Constantes
 const containerCards = document.querySelector('.container-cards');
-const buttonClouse = document.querySelector('.clouse');
-const details = document.querySelector('#details');
 const guardarProductos = document.querySelector('#guardarProductos');
 let mensaje = document.getElementById("mensaje");
 let productosAñaditos = [];
@@ -178,13 +176,11 @@ async function filterData(tipo, orden) {
             insertCards(response.products);
             document.getElementById("OrdenDown").disabled = true;
             document.getElementById("OrdenUp").disabled = false;
-        }
-        else {
+        } else {
             mensaje.innerHTML = "No se encontró este producto"
             document.getElementById("OrdenUp").disabled = true;
             document.getElementById("OrdenDown").disabled = true;
         }
-
     } catch (error) {
         console.log(error);
     }
